@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+/* 管理画面 css
+----------------------------------------------------
+   管理者以外のスタイル
+*/
+
+/* ダッシュボードトップ
+* ---------------------------------------- */
+
+/* 「ボックスをここにドラッグ」を非表示 */
+#dashboard-widgets-wrap .metabox-holder .postbox-container .empty-container {
+	display: none;
+}
+
+/*admin_barに入れたログインボタンを右側に移動*/
+#wp-admin-bar-new_item_in_admin_bar {
+	float:right !important;
+	margin-right:20px;
+}
+
+/*表示オプションとヘルプも非表示*/
+#contextual-help-link-wrap{display:none;}
+#screen-options-link-wrap{display:none;}
+
+/*管理画面のフッターとバージョン非表示*/
+#wpfooter{display:none;}
+
+/*管理画面*/
+/* .siteMeta input[type=text] {
+	width: 300px;
+} */
+
+
+/* 管理画面 クラアント用
+* ---------------------------------------- */
+
+/*固定ページ サブメニュー非表示*/
+#adminmenumain #menu-pages .wp-submenu {
+	display: none;
+}
+
+/*固定ページ 新規追加ボタン非表示*/
+body.post-type-page .page-title-action {
+	display: none;
+}
+
+/*固定ページ プラグインの複製リンク非表示*/
+body.post-type-page .row-actions .clone {
+	display: none;
+}
+
+/*MW WP Form サブメニュー非表示*/
+#adminmenumain #menu-posts-mw-wp-form .wp-submenu {
+	display: none;
+}
+/*MW WP Form 新規追加ボタン非表示*/
+body.post-type-mw-wp-form .page-title-action {
+	display: none;
+}
+/*MW WP Form 寄付ボタン非表示*/
+body.post-type-mw-wp-form .subsubsub .donation {
+	display: none;
+}
+
+/*お知らせ サブメニュー非表示*/
+#adminmenumain #menu-posts-news .wp-submenu {
+	display: none;
+}
+/*お知らせ 新規追加ボタン非表示*/
+body.post-type-news .page-title-action {
+	/* display: none; */
+}
+/*お知らせ 寄付ボタン非表示*/
+body.post-type-news .subsubsub .donation {
+	display: none;
+}
+
+

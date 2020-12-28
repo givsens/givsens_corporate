@@ -1,0 +1,16 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+.mplus_font {
+  font-family: "Mplus 1p";
+  font-weight: normal; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal; }
+
+/* リンク
+----------------------------------------------------*/
+a {
+  color: #54c2f0; }
+
+a:hover {
+  text-decoration: none; }

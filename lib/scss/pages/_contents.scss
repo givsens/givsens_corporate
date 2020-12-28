@@ -1,0 +1,117 @@
+// ===================================================================
+// コンテンツエリア
+// ===================================================================
+
+/* コンテンツ共通
+----------------------------------------------------*/
+/* 12 COLUMN : RESPONSIVE GRID SYSTEM SPレイアウト */
+@media(max-width :767px){.sp_image_cols{&:not(.sp_col2):not(.sp_col3){.col{&:not(:last-child){margin-bottom:1em}figure{overflow:hidden;img{float:left;width:32%;margin-bottom:10px;vertical-align:middle}figcaption{float:right;width:66%;margin-top:0;vertical-align:middle}}}}&.sp_col2{.col{width:49%;&:nth-child(odd){clear:both;float:left}&:nth-child(even){float:right}}}&.sp_col3{.col{float:left;width:32%;&:nth-child(3n+1){clear:both;margin-right:2%}&:nth-child(3n){float:right}}}}}
+
+figcaption, figure {
+	text-align: center;
+}
+
+.inner {
+	max-width: $base_width;
+	margin: auto;
+	@media only screen and (max-width: $base_width) {
+		padding-left: $content_space;
+		padding-right: $content_space;
+	}
+}
+
+/* 固定ページ
+----------------------------------------------------*/
+.contents_wrap {
+	margin-bottom: 10%;
+}
+
+/* 固定ページ カスタム
+----------------------------------------------------*/
+.customH2 {
+	font-size: 4.0rem;
+}
+
+
+
+/* 2カラム用
+----------------------------------------------------*/
+#main_column {
+	float: right;
+	width: $main_width;
+}
+#side_column {
+	float: left;
+	width: $side_width;
+}
+/* content-footer（メインフッターコンテンツ）
+----------------------------------------------------*/
+.content-footer {
+	padding: 30px 0;
+	background-color: rgba( $main_color, 0.15);
+	.content-footer_in {
+		max-width: $base_width;
+		margin: 0 auto;
+		.float-4-6 {
+			overflow: hidden;
+			margin-bottom: 20px;
+		}
+		.left {
+			figure {
+				img {border: 2px solid #fff;}
+			}
+		}
+		.right {
+			p {
+				margin-bottom: 0;
+			}
+			.ft_cont_tel {
+				@include fz(24);
+				font-weight: bold;
+				&::before {
+					font-family:"FontAwesome";
+					content:"\f098";
+					margin-right: 5px;
+					float: left;
+					display: block;
+					position: relative;
+					top: -2px;
+				}
+			}
+			.ft_cont_access {
+				margin-bottom: 10px;
+			}
+		}
+		.g_map {
+			margin-bottom: 0;
+			iframe {
+				width: 100%;
+				height: 350px;
+			}
+		}
+	}
+}
+
+// スマホ用 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@media only screen and (max-width: $sp_width) {
+/* #content
+----------------------------------------------------*/
+#main_column {
+	float: none;
+	width: 96%;
+	margin: auto;
+}
+
+/* content-footer（メインフッターコンテンツ）
+----------------------------------------------------*/
+.content-footer {
+	.content-footer_in {
+		width: 96%;
+		margin: 0px auto 0;
+	}
+}
+
+
+}

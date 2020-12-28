@@ -1,0 +1,37 @@
+
+/* table
+----------------------------------------------------*/
+
+// 診療時間テーブル
+.table_schedule {
+  width: 100%;
+  margin-bottom: 10px;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+  font-weight: 500;
+  caption {
+    margin-bottom: 0.5em;
+    text-align: center;
+    @include fz(16);
+  }
+  th, td {
+    border: 1px solid $color_schedule_border;
+    padding: 5px;
+    text-align: center;
+  }
+  thead th {
+    background: $color_schedule_thead_bg;
+    color: $color_schedule_thead_text;
+  }
+  tbody th {
+    background: $color_schedule_tbody_th_bg;
+  }
+  td {
+    background: $color_schedule_td_bg;
+  }
+}
+
+@media screen and (max-width: $sp_width) {
+
+
+
+}

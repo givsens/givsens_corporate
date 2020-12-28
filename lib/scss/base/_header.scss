@@ -1,0 +1,266 @@
+/* 共通
+----------------------------------------------------*/
+/* スクロールバーの有無によるズレ対策 */
+html {
+  overflow-y: scroll;
+  font-size: 62.5%;
+}
+
+body {
+  color: $txt_color;
+  @include fz(16);
+  font-family: $base_font;
+  line-height: 1.8;
+  letter-spacing: .1em;
+  background-color: $body_color;
+
+  .pc {
+    display: block;
+  }
+
+  .sp {
+    display: none;
+  }
+
+  .h_nav {
+    display: block;
+  }
+
+  .sp_side_nav {
+    display: none;
+  }
+
+  @media only screen and (max-width: $sp_width) {
+    @include fz(14);
+    line-height: 1.7;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .pc {
+      display: none;
+    }
+
+    .sp {
+      display: block;
+    }
+
+    .h_nav {
+      display: none;
+    }
+
+    .sp_side_nav {
+      display: block;
+    }
+  }
+}
+
+/*----------------------------------------------------
+  header
+----------------------------------------------------*/
+@media all and (-ms-high-contrast:none) {
+
+  *::-ms-backdrop,
+  header .header_in {
+    height: 85px;
+
+    @media (max-width: 768px) {
+      /* IE11 */
+    }
+  }
+}
+
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+  @media (max-width: 768px) {
+    .body_top .header .header_in .header_logo {
+      height: 50px;
+    }
+  }
+}
+
+
+// top以外
+body:not(.body_top) {
+  .header {
+    position: static;
+    background-color: #fff;
+
+    .header_in {
+      padding: 13px 15px 12px;
+
+      .header_logo {
+        svg {
+          fill: $main_color;
+        }
+
+        a:hover {
+          svg {
+            fill: lighten($main_color, 10%);
+          }
+        }
+      }
+    }
+  }
+}
+
+// topのみ
+.body_top {
+  .header {
+    .header_in {
+      padding: 13px 15px 12px;
+
+      .header_logo {
+        @media (max-width: 768px) {
+          height: 60px;
+        }
+
+        .svg2 {
+          position: relative;
+          top: -55px;
+        }
+
+        @media only screen and (max-width: 857px) {
+          margin-bottom: -32px;
+
+          .svg2 {
+            top: -34px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  line-height: 1;
+
+  .header_in {
+    @include flexbox();
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100vw - 230px);
+    margin: 0;
+    overflow: hidden;
+
+    @media (max-width: 1000px) {
+      width: calc(100vw - 100px);
+    }
+
+    .header_logo {
+      width: 30%;
+      margin: 0 0;
+
+      svg {
+        fill: $main_color;
+        height: auto;
+        max-width: 260px;
+        transition: .3s;
+
+        @media (max-width: 500px) {
+          margin: 0 7% 0 auto;
+        }
+      }
+
+      a:hover {
+        svg {
+          fill: $main_color;
+        }
+      }
+    }
+  }
+
+  //headerIn
+
+  // @media screen and (min-width:$sp_width) and ( max-width:1000px) {
+  //   .header_in {
+  //     margin: 0  7% 0 auto;
+  //   }
+  // }
+
+  @media only screen and (max-width: 857px) {
+    .header_in {
+      padding: 10px 30px 0 15px;
+
+      .header_logo {
+        svg {
+          width: 160px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: $sp_width) {
+    .header_in {
+      width: 100%;
+
+      .header_nav {
+        display: none;
+      }
+    }
+  }
+}
+
+
+
+//パンくずリスト
+.breadcrumbBox {
+  // padding-top: 15px;
+  padding: .8em 0 .8em 1em;
+  margin: 0 0 60px;
+  @include fz(13);
+  // background: #e9e9e9;
+
+  ul.bread_crumb {
+    // max-width: $base_width;
+    max-width: 1920px;
+    margin: 0 auto;
+
+    li {
+      display: inline-block;
+      color: $txt_color;
+
+      &:first-child {}
+
+      &:after {
+        content: '>';
+        padding-left: 6px;
+        margin-right: 0px;
+      }
+
+      a {
+        color: $txt_color;
+        text-decoration: none;
+      }
+
+      &:last-child:after {
+        content: '';
+        padding-left: 0px;
+        margin-right: 0px;
+      }
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  @media only screen and (max-width: $base_width) {
+    margin: 0 15px 60px;
+  }
+
+  @media only screen and (max-width: $sp_width) {
+    margin: 0 15px 40px;
+    @include fz(10);
+
+    ul.bread_crumb {
+      width: 100%;
+    }
+  }
+}

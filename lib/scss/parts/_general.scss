@@ -1,0 +1,233 @@
+// ===================================================================
+// 汎用
+// ===================================================================
+
+
+/* float
+----------------------------------------------------*/
+.float-1-9 .left,
+.float-2-8 .left,
+.float-3-7 .left,
+.float-4-6 .left,
+.float-5-5 .left,
+.float-6-4 .left,
+.float-7-3 .left,
+.float-8-2 .left,
+.float-9-1 .left {float: left;
+img {max-width: 100%; height: auto;}
+}
+.float-1-9 .right,
+.float-2-8 .right,
+.float-3-7 .right,
+.float-4-6 .right,
+.float-5-5 .right,
+.float-6-4 .right,
+.float-7-3 .right,
+.float-8-2 .right,
+.float-9-1 .right {float: right;
+img {max-width: 100%; height: auto;}
+}
+
+.float-1-9 .left { width: 8%;}
+.float-1-9 .right {width: 89%;}
+.float-2-8 .left { width: 18%;}
+.float-2-8 .right {width: 79%;}
+.float-3-7 .left { width: 28%;}
+.float-3-7 .right {width: 69%;}
+.float-4-6 .left { width: 38%;}
+.float-4-6 .right {width: 59%;}
+.float-5-5 .left { width: 49%;}
+.float-5-5 .right {width: 48%;}
+.float-6-4 .left { width: 59%;}
+.float-6-4 .right {width: 38%;}
+.float-7-3 .left { width: 69%;}
+.float-7-3 .right {width: 28%;}
+.float-8-2 .left { width: 79%;}
+.float-8-2 .right {width: 18%;}
+.float-9-1 .left { width: 89%;}
+.float-9-1 .right {width: 8%;}
+
+.float-1-9:after,
+.float-2-8:after,
+.float-3-7:after,
+.float-4-6:after,
+.float-5-5:after,
+.float-6-4:after,
+.float-7-3:after,
+.float-8-2:after,
+.float-9-1:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.float-1-9,
+.float-2-8,
+.float-3-7,
+.float-4-6,
+.float-5-5,
+.float-6-4,
+.float-7-3,
+.float-8-2,
+.float-9-1 {
+	margin-bottom: 30px;
+	@media screen and (max-width: $sp_width) {
+		margin-bottom: 40px;
+	}
+}
+ @media screen and (max-width: $sp_width) {
+	.float-1-9 .left,
+	.float-1-9 .right,
+	.float-2-8 .left,
+	.float-2-8 .right,
+	.float-3-7 .left,
+	.float-3-7 .right,
+	.float-4-6 .left,
+	.float-4-6 .right,
+	.float-5-5 .left,
+	.float-5-5 .right,
+	.float-6-4 .left,
+	.float-6-4 .right,
+	.float-7-3 .left,
+	.float-7-3 .right,
+	.float-8-2 .left,
+	.float-8-2 .right,
+	.float-9-1 .left,
+	.float-9-1 .right {
+		float: none;
+		width: 100%;
+		img {
+			margin: auto;
+			display: block;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+
+/*    decoration
+---------------------------------------------------- */
+.bold {font-weight:bold;}
+.underline {text-decoration: underline;}
+
+/*    color
+---------------------------------------------------- */
+
+.red {color: #F33;}
+.yellow {color: #FFF100;}
+
+
+/*    hover
+---------------------------------------------------- */
+
+.mk {
+	-webkit-transition: 0.2s ease-in-out;
+	-moz-transition: 0.2s ease-in-out;
+	-o-transition: 0.2s ease-in-out;
+	transition: 0.2s ease-in-out;
+}
+.mk:hover {
+	opacity: 0.8;
+	filter: alpha(opacity=20);
+}
+
+/*    font-size
+---------------------------------------------------- */
+
+.fz16 {@include fz(16);}
+.fz18 {@include fz(18);}
+.fz22 {@include fz(22);}
+.fz25 {@include fz(25);}
+.fz28 {@include fz(28);}
+
+.text-xxlarge { @include fz(24); }
+.text-xlarge { @include fz(20); }
+.text-large { @include fz(16); }
+.text-small { @include fz(12); }
+.text-xsmall { @include fz(10); }
+@media ( min-width : 768px ) {
+	.text-xxlarge { @include fz(36); }
+	.text-xlarge { @include fz(28); }
+	.text-large { @include fz(20); }
+	.text-small { @include fz(12); }
+	.text-xsmall { @include fz(10); }
+}
+
+/*   clerfix
+---------------------------------------------------- */
+
+.clerfix {
+	*zoom: 1;
+	&:after {
+		content: ".";
+		display: block;
+		clear: both;
+		height: 0;
+		visibility: hidden;
+	}
+}
+/*   text
+---------------------------------------------------- */
+.text_center {text-align: center !important;}
+.text_right {text-align: right !important;}
+.text_left {text-align: left !important;}
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+@media ( min-width : $sp_width ) {
+	.pc-hide, .sp-only { display: none !important; }
+	.pc-text-center { text-align: center; }
+	.pc-text-left { text-align: left; }
+	.pc-text-right { text-align: right; }
+}
+@media ( max-width : $sp_width - 1 ) {
+	.sp-hide, .pc-only, .tablet-only { display: none !important; }
+	.sp-text-center { text-align: center; }
+	.sp-text-left { text-align: left; }
+	.sp-text-right { text-align: right; }
+}
+
+/*    float
+---------------------------------------------------- */
+.fr {float: right !important;}
+.fl {float: left !important;}
+.clear {clear: both;}
+.oh {overflow: hidden;}
+
+/*    margin
+---------------------------------------------------- */
+@for $i from 0 through 10 {
+  .mt#{$i * 5} {
+    margin-top:#{$i * 5}px !important;
+  }
+  .mr#{$i * 5} {
+    margin-right:#{$i * 5}px !important;
+  }
+  .mb#{$i * 5} {
+    margin-bottom:#{$i * 5}px !important;
+  }
+  .ml#{$i * 5} {
+    margin-left:#{$i * 5}px !important;
+  }
+}
+/*    padding
+---------------------------------------------------- */
+@for $i from 0 through 10 {
+  .pt#{$i * 5} {
+    padding-top:#{$i * 5}px !important;
+  }
+  .pr#{$i * 5} {
+    padding-right:#{$i * 5}px !important;
+  }
+  .pb#{$i * 5} {
+    padding-bottom:#{$i * 5}px !important;
+  }
+  .pl#{$i * 5} {
+    padding-left:#{$i * 5}px !important;
+  }
+}
+

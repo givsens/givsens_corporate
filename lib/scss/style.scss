@@ -1,0 +1,50 @@
+@charset "utf-8";
+// ===================================================================
+// 各SCSSファイルのインポート
+// ===================================================================
+// @import "compass/css3";
+
+//アイコンフォント読み込み
+//http://fortawesome.github.io/Font-Awesome/icons/
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/earlyaccess/sawarabimincho.css);
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+@import "setting";     //設定用
+@import "font";                // フォント
+
+//base
+@import "base/reset";         // リセットCSS、フォントサイズ
+//pages
+@import "parts/mixin";        // ミックスイン、@extend、CSS3、凡用など
+//base
+@import "base/header";        // レイアウト ヘッダー
+@import "base/navigation";    // レイアウト グリーバルナビゲーション
+@import "base/footer";        // レイアウト フッター
+@import "base/wordpress";     // WordPress用
+@import "base/sidebar";      // レイアウト サイドバー
+
+
+//pages
+@import "pages/contents";     // コンテンツ
+@import "pages/pages";        // 固定ページ
+@import "pages/page_contact"; // 固定ページ
+@import "pages/archive";      // アーカイブページ
+@import "pages/single";       // シングルページ
+
+//parts
+@import "parts/loading"; // テンプレートパーツ
+@import "parts/custom_parts"; // テンプレートパーツ
+@import "parts/heading";      // 見出し
+@import "parts/main_visual";  // スライダー
+@import "parts/table";        // テーブル
+@import "parts/buttons";      // ボタン
+@import "parts/parts";        // パーツその他（SNSなど）
+
+//top
+@import "top";                // トップ
+@import "sub";                // サブ
+
+//parts
+@import "parts/print";        // 印刷用
+@import "parts/general";      // 汎用

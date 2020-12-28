@@ -1,0 +1,202 @@
+// ===================================================================
+// 固定ページ
+// ===================================================================
+
+/* お問い合わせ	
+----------------------------------------------------*/
+.contact_box {
+	width: $base_width;
+	margin: 0 auto;
+	@include fz(16);
+
+	.contact_dl_box {
+		display: table;
+		width: 100%;
+		@include fz(16);
+		border-top: 1px solid #e1e1e1;
+		border-right: 1px solid #e1e1e1;
+		border-left: 1px solid #e1e1e1;
+
+		dl {
+			display: table-row;
+
+			dt,
+			dd {
+				display: table-cell;
+				border-bottom: 1px solid #e1e1e1;
+			}
+
+			dt {
+				padding: 3% 3% 3% 10%;
+				width: 40%;
+				vertical-align: middle;
+
+				.req {
+					font-size: 11px;
+					font-size: 1.1rem;
+					background: #f44522;
+					color: #fff;
+					padding: 2px 5px;
+					margin-right: 10px;
+					position: relative;
+					top: -2px;
+				}
+			}
+
+			dd {
+				vertical-align: middle;
+				padding: 3% 3% 3% 1%;
+
+				p {
+					@include fz(13);
+					color: #999;
+					margin-top: 7px;
+
+					.ex {
+						font-size: 11px;
+						font-size: 1.1rem;
+						background: #f3f3f3;
+						display: inline-block;
+						padding: 2px 6px 3px;
+						position: relative;
+						top: -2px;
+						margin-right: 5px;
+					}
+				}
+			}
+		}
+	}
+
+	input,
+	textarea,
+	select {
+		border: 1px solid #e1e1e1;
+		border-radius: 5px;
+		padding: 2% 2%;
+		color: #666;
+	}
+
+	input {
+		width: 75%;
+	}
+
+	textarea {
+		width: 89%;
+	}
+
+	select {
+		width: 50%;
+	}
+
+	input[type=checkbox],
+	input[type=radio] {
+		width: auto;
+	}
+
+	input[type=text]:focus,
+	textarea:focus {
+		border-color: #83B6C2;
+		outline: none;
+		box-shadow: 2px 2px 4px rgba(143, 183, 222, 0.6), -2px -2px 4px rgba(143, 183, 222, 0.6), inset 0 1px 2px rgba(0, 0, 0, 0.2);
+	}
+
+	.submit_btn {
+		text-align: center;
+		padding: 3%;
+		width: 100%;
+	}
+
+	.submit_btn input[type="submit"] {
+		-webkit-appearance: none;
+		border-radius: 5px;
+		background: $main_color;
+		color: #FFF;
+		box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+		-webkit-transition: background-color 0.35s, color 0.35s;
+		transition: background-color 0.35s, color 0.35s;
+		border: 1px solid $main_color;
+		cursor: pointer;
+		letter-spacing: 2px;
+		width: 30%;
+		@include fz(18);
+
+		&:hover {
+			border-radius: 5px;
+			background: #fff;
+			color: #333;
+			box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+			-webkit-transition: background-color 0.35s, color 0.35s;
+			transition: background-color 0.35s, color 0.35s;
+			border: 1px solid $main_color;
+		}
+	}
+}
+
+::-webkit-input-placeholder {
+	color: #AFAFAF;
+}
+
+:-moz-placeholder {
+	color: #AFAFAF;
+}
+
+//プラグイン
+.mw_wp_form .error {
+	font-size: 80% !important;
+	color: #f44522 !important;
+	display: block;
+	padding-top: 5px;
+}
+
+//お問い合わせ完了画面
+.mw_wp_form.mw_wp_form_complete {
+	margin: 50px auto 350px;
+}
+
+/**
+ * tel and zip
+ */
+.mwform-tel-field input[type="text"],
+.mwform-zip-field input[type="text"] {
+	width: 25% !important;
+}
+
+// スマホ用 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+@media only screen and (max-width: $sp_width) {
+
+	/* お問い合わせ	
+----------------------------------------------------*/
+	.contact_box {
+		width: 100%;
+		margin: 0;
+
+		.contact_dl_box {
+			dl {
+
+				dt,
+				dd {
+					display: block;
+					border-bottom: 1px solid #e1e1e1;
+					padding: 3%;
+				}
+
+				dt {
+					width: 100%;
+					vertical-align: middle;
+					border-bottom: none;
+				}
+
+				dd {
+					width: 100%;
+				}
+			}
+		}
+
+		.submit_btn input[type="submit"] {
+			width: 70%;
+			display: block;
+			margin: auto;
+		}
+	}
+}

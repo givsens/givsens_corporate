@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+// Hind
+@font-face {
+  font-family: "Hind";
+  src: url("../fonts/Hind-Regular.woff2") format("woff2"),
+  url("../fonts/Hind-Regular.woff") format("woff");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Hind";
+  src: url("../fonts/Hind-SemiBold.woff2") format("woff2"),
+       url("../fonts/Hind-SemiBold.woff") format("woff");
+  font-weight: 500;
+
+}
+@font-face {
+  font-family: "Hind";
+  src: url("../fonts/Hind-Bold.woff2") format("woff2"),
+       url("../fonts/Hind-Bold.woff") format("woff");
+  font-weight: 700;
+}
+
+@mixin Hind($font-weight: 300) {
+  font-family: "Hind", sans-serif;
+  font-weight: $font-weight;
+}

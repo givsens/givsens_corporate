@@ -1,0 +1,130 @@
+// ===================================================================
+// シングルページ
+// ===================================================================
+
+/* single（シングルページ）
+----------------------------------------------------*/
+.single_box {
+	margin: 0 auto 150px;
+
+	.style_ttl {
+		a {
+			color: $main_color;
+			text-decoration: none;
+			border-bottom: 1px solid $main_color;
+		}
+
+		a:hover {
+			color: $sub_color;
+			border-bottom: 1px solid $main_color;
+		}
+	}
+
+	.single_txt_box {
+		overflow: hidden;
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p {
+			margin-bottom: 20px;
+		}
+
+		h1 {
+			@include fz(24);
+		}
+
+		h2 {
+			@include fz(20);
+		}
+
+		h3 {
+			@include fz(18);
+		}
+
+		h4 {
+			@include fz(16);
+		}
+
+		h5 {
+			@include fz(15);
+		}
+
+		h6 {
+			@include fz(14);
+		}
+	}
+}
+
+.single_box {
+
+	/* editor */
+	p {
+		display: block;
+		margin: 1em 0;
+	}
+
+	strong {
+		font-weight: bold;
+	}
+
+	em {
+		font-style: italic;
+	}
+
+	blockquote {
+		display: block;
+		-webkit-margin-before: 1em;
+		-webkit-margin-after: 1em;
+		-webkit-margin-start: 40px;
+		-webkit-margin-end: 40px;
+	}
+
+	/* img */
+	.aligncenter {
+		display: block;
+		margin: 0 auto;
+	}
+
+	.alignright {
+		float: right;
+		margin-left: 1%;
+		margin-bottom: 1%;
+	}
+
+	.alignleft {
+		float: left;
+		margin-right: 1%;
+		margin-bottom: 1%;
+	}
+
+	img[class*="wp-image-"],
+	img[class*="attachment-"] {
+		height: auto;
+		max-width: 100%;
+	}
+}
+
+
+
+
+@media only screen and (max-width: $sp_width) {
+	.single_box {
+		margin: 0 auto 15%;
+	}
+
+	.single_box {
+
+		/* editor */
+		.alignright,
+		.alignleft {
+			float: none;
+			margin: auto;
+			display: block;
+		}
+	}
+
+}

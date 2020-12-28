@@ -1,0 +1,115 @@
+// ===================================================================
+// アーカイブページ
+// ===================================================================
+.archive_box_inner {
+	display: flex;
+	flex-wrap: wrap;
+	.archive_ttl {
+		flex-basis: 100%;
+	}
+	.archive_img {
+		flex-basis: 40%;
+	}
+	.archive_txt_wrap {
+		flex-basis: 58%;
+		margin-left: auto;
+	}
+	@media only screen and (max-width: $sp_width) {
+		display: block;
+		.archive_img {
+			text-align: center;
+			margin-bottom: 4%;
+		}
+	}
+}
+
+.archive_box {
+	.archive_box_inner {
+		margin-bottom: 10%;
+		.archive_ttl {
+			margin-bottom: 0;
+			position: relative;
+			padding-bottom: .2em;
+			border-bottom: 4px solid rgba( $main_color, 0.2);
+			margin-bottom: 2%;
+			margin-top: 3%;
+			font-weight: normal;
+			@include fz(22);
+			line-height: 1.4;
+			&:first-child {
+				margin-top: 0;
+			}
+			&::after {
+				position: absolute;
+				bottom: -4px;
+				left: 0;
+				z-index: 2;
+				content: '';
+				width: 20%;
+				height: 4px;
+				background-color: $main_color;
+			}
+		}
+		.archive_data {
+			text-align: right;
+		}
+		.archive_more {
+			text-align: right;
+		}
+		.btn_more {
+			text-align: right;
+			margin-bottom: 40px;
+		}
+	}
+}
+
+// ページネーション
+// http://web-ashibi.net/archives/971
+.pagination {
+	clear: both;
+	padding: 20px 0;
+	position: relative;
+	font-size: 14px;
+	line-height: 14px;
+	text-align: center;
+	.pagination-box {
+		display: inline-block;
+		span,
+		a {
+			display: block;
+			float: left;
+			margin: 2px 2px 2px 0;
+			padding: 10px 15px 10px 15px;
+			text-decoration: none;
+			width: auto;
+			color: #fff;
+			background: $main_color;
+		}
+		a:hover {
+			background: rgba( $main_color, 0.8);
+		}
+		.current{
+			padding: 10px 15px 10px 15px;
+			background: rgba( $main_color, 0.8);
+			color: #fff;
+		}
+	}
+	@media only screen and (max-width: 413px) {
+	font-size: 12px;
+	line-height: 12px;
+		span,
+		a {
+			padding: 8px 10px 8px 10px;
+		}
+		.current{
+			padding: 8px 10px 8px 10px;
+		}
+	}
+}
+/* スマホ用
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: $sp_width) {
+
+
+}

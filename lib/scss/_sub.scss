@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+/*----------------------------------------------------
+ Sub Page
+----------------------------------------------------*/
+
+/* Common
+----------------------------------------------------*/
+body:not(.home) {
+	background: #f4f8fa;
+}
+
+
+/* 制作実績
+----------------------------------------------------*/
+.archive-works {
+	.span_4 {
+		margin-bottom: 70px;
+		padding: 10px;
+
+		&:nth-child(3n+1) {
+			margin-left: 0;
+		}
+
+		.archive_img {
+			margin-bottom: 30px;
+		}
+
+		.archive_ttl {
+			margin-bottom: 2em;
+			color: $main_color;
+		}
+
+		.more {
+			margin: 0 auto;
+			text-align: center;
+
+			a {
+				position: relative;
+				display: block;
+				max-width: 300px;
+				margin: 0 auto;
+				padding: .5em 0;
+				border: 1px solid #c7c7c7;
+				text-align: center;
+				color: #c7c7c7;
+				@include fz(16);
+				font-weight: bold;
+				text-decoration: none;
+				text-align: center;
+				transition: background-color 0.35s, color 0.35s;
+				letter-spacing: 2px;
+
+				&:hover {
+					color: $btn_color;
+					background: $btn_txt_color;
+					border: 1px solid $btn_color;
+					transition: background-color 0.35s, color 0.35s;
+				}
+
+				&::after {
+					content: "";
+					display: block;
+					position: absolute;
+					top: 50%;
+					right: 7%;
+					margin: auto;
+					width: 6px;
+					height: 6px;
+					border-top: 1px solid $btn_txt_color;
+					border-right: 1px solid $btn_txt_color;
+					transform: translate(0, -50%) rotate(45deg);
+					transition: 0.2s;
+				}
+
+				&:hover::after {
+					right: 5%;
+					border-top: 1px solid $btn_color;
+					border-right: 1px solid $btn_color;
+				}
+			}
+
+			&.btn_sm {
+				a {
+					@include fz(14);
+				}
+			}
+
+			&.btn_lg {
+				a {
+					@include fz(18);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,162 @@
+// ===================================================================
+// mixinやらCSS3やら、extendも。
+// ===================================================================
+
+
+@mixin linkColor($color) {
+	color: $color;
+	&:hover, &:active, &:focus {
+		color: lighten($color, 20%);
+	}
+}
+
+@mixin fz($size: 14) {
+  font-size: $size + px;
+  font-size: ($size / 10)  + rem;
+}
+// モダンブラウザーなら透明度の設定は opacity プロパティでOKですが、IEは filter を使う必要があります。
+// opacity は0〜1、filter は0〜100のパーセンテージで透明度を指定するので、
+// IE用には単純に opacity の値に100をかけて出力します。
+
+// SCSS @includeで呼び出し
+
+// .box {
+//      @include opacity(0.5);
+// }
+// CSSに出力
+
+// .box {
+//   opacity: 0.5;
+//   filter: alpha(opacity=50);
+// }
+@mixin opacity($opacity) {
+     opacity: $opacity;
+     $opacityIE: $opacity * 100;
+     filter: alpha(opacity=$opacityIE);
+}
+
+//flexbox（フレックスボックス）
+@mixin flexbox {
+  display:-webkit-box; // old
+  display:-moz-box; // old
+  display:-ms-flexbox; // ie
+  display:-webkit-flex; // new
+  display:flex; // new
+}
+
+
+
+//記載例
+//@include bg-gradient;
+//記載例2
+//@include bg-gradient(90deg, #fbb, 100%);
+
+// border-radius
+@mixin border_radius($br_value) {
+	@each $prefix in $set_prefix {
+		#{$prefix}border-radius: $br_value;
+	}
+}
+
+
+// background-size
+@mixin bg_size($w, $h: auto) {
+	@each $prefix in $set_prefix {
+		#{$prefix}background-size: $w $h;
+	}
+}
+
+
+// min-height
+@mixin min_height($value) {
+	min-height: $value;
+	_height: $value;
+}
+
+//--arrow（アロー）----------------------------------------------
+//参考サイト
+//https://skycolor.jp/sassscss%E3%81%AE%E4%BE%BF%E5%88%A9%E3%81%AAmixin%E3%82%B9%E3%83%8B%E3%83%9A%E3%83%83%E3%83%88%E3%82%92%E5%82%99%E5%BF%98%E9%8C%B2
+//---------------------------------------------------------
+
+// 定義 @include arrow(サイズ, 線の太さ, 線の種類, 色, 矢印の向き)
+@mixin arrow($size, $border-width, $border-style, $border-color, $direction) {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  width: $size;
+  height: $size;
+  margin-top: - ($size / 2);
+  border: $border-width $border-style $border-color;
+  @if $direction == up {
+    -webkit-transform: rotate(-135) + deg;
+    -moz-transform: rotate(-135) + deg;
+    transform: rotate(-135) + deg;
+  }
+  @else if $direction == under {
+    -webkit-transform: rotate(45) + deg;
+    -moz-transform: rotate(45) + deg;
+    transform: rotate(45) + deg;
+  }
+  @else if $direction == right {
+    -webkit-transform: rotate(-45) + deg;
+    -moz-transform: rotate(-45) + deg;
+    transform: rotate(-45) + deg;
+  }
+  @else if $direction == left {
+    -webkit-transform: rotate(135) + deg;
+    -moz-transform: rotate(135) + deg;
+    transform: rotate(135) + deg;
+  }
+  @else {
+    -webkit-transform: rotate($direction) + deg;
+    -moz-transform: rotate($direction) + deg;
+    transform: rotate($direction) + deg;
+  }
+}
+
+//サンプル
+// @include arrow(サイズ, 線の太さ, 線の種類, 色, 矢印の向き)
+// *:before {
+//   @include arrow(10px, 2px, solid, #ff00cc, left);
+// }
+
+//--グラデーション----------------------------------------------
+//参考サイト
+//https://skycolor.jp/sassscss%E3%81%AE%E4%BE%BF%E5%88%A9%E3%81%AAmixin%E3%82%B9%E3%83%8B%E3%83%9A%E3%83%83%E3%83%88%E3%82%92%E5%82%99%E5%BF%98%E9%8C%B2
+//---------------------------------------------------------
+
+// 定義 @include先で各定義箇所指定（開始色, 終了色, グラデーションの種類）
+@mixin gradient($start-color, $end-color, $orientation) {
+  background: $start-color;
+  @if $orientation == vertical {
+    // vertical - 垂直
+    background: -moz-linear-gradient(top, $start-color 0%, $end-color 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$start-color), color-stop(100%,$end-color));
+    background: -webkit-linear-gradient(top, $start-color 0%,$end-color 100%);
+    background: -o-linear-gradient(top, $start-color 0%,$end-color 100%);
+    background: -ms-linear-gradient(top, $start-color 0%,$end-color 100%);
+    background: linear-gradient(to bottom, $start-color 0%,$end-color 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=#{($start-color)}, endColorstr=#{($end-color)} ,GradientType=0 );
+  }
+  @else if $orientation == horizontal {
+    // horizontal - 水平
+    background: -moz-linear-gradient(left, $start-color 0%, $end-color 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,$start-color), color-stop(100%,$end-color));
+    background: -webkit-linear-gradient(left, $start-color 0%,$end-color 100%);
+    background: -o-linear-gradient(left, $start-color 0%,$end-color 100%);
+    background: -ms-linear-gradient(left, $start-color 0%,$end-color 100%);
+    background: linear-gradient(to right, $start-color 0%,$end-color 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=#{($start-color)}, endColorstr=#{($end-color)} ,GradientType=1 );
+  }
+  @else {
+    // radial - 放射状
+    background: -moz-radial-gradient(center, ellipse cover, $start-color 0%, $end-color 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,$start-color), color-stop(100%,$end-color));
+    background: -webkit-radial-gradient(center, ellipse cover, $start-color 0%,$end-color 100%);
+    background: -o-radial-gradient(center, ellipse cover, $start-color 0%,$end-color 100%);
+    background: -ms-radial-gradient(center, ellipse cover, $start-color 0%,$end-color 100%);
+    background: radial-gradient(ellipse at center, $start-color 0%,$end-color 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=#{($start-color)}, endColorstr=#{($end-color)} ,GradientType=1 );
+  }
+}

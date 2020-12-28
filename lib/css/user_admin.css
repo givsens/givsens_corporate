@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+/* 管理画面 css
+----------------------------------------------------
+   管理者を含めた共通スタイル
+*/
+
+
+/* ログイン画面のロゴを変更
+* ---------------------------------------- */
+
+body.login {
+	background: #333 url(../img/admin/bg_admin.jpg) no-repeat center center;
+	background-size: cover;
+}
+body.login div#login {}
+body.login div#login h1 {}
+body.login div#login h1::after {
+	content: "管理画面" !important;
+	font-weight: normal;
+	letter-spacing: 0.1em;
+	color: #fff;
+	text-shadow: 1px 1px 1px #444
+}
+body.login div#login h1 a {
+	display: none;
+}
+body.login div#login form#loginform {
+	background-color: rgba(0, 0, 0, .5);
+}
+body.login div#login form#loginform p {}
+body.login div#login form#loginform p label {color: #fff;}
+body.login div#login form#loginform input {}
+body.login div#login form#loginform input[type="text"]::-webkit-input-placeholder,
+body.login div#login form#loginform input[type="password"]::-webkit-input-placeholder {color: #ccc !important;}
+body.login div#login form#loginform input[type="text"]:-ms-input-placeholder,
+body.login div#login form#loginform input[type="password"]:-ms-input-placeholder {color: #ccc !important;}
+body.login div#login form#loginform input[type="text"]::-moz-placeholder,
+body.login div#login form#loginform input[type="password"]::-moz-placeholder {color: #ccc !important;}
+body.login div#login form#loginform input#user_login {}
+body.login div#login form#loginform input#user_pass {}
+body.login div#login form#loginform p.forgetmenot {}
+body.login div#login form#loginform p.forgetmenot input#rememberme {}
+body.login div#login form#loginform p.forgetmenot label {
+	color:  #fff;
+	text-shadow: 1px 1px 1px #444;
+}
+body.login div#login form#loginform p.submit {}
+body.login div#login form#loginform p.submit input#wp-submit {}
+body.login div#login p#nav {}
+body.login div#login p#nav a {
+	color:  #fff;
+	text-shadow: 1px 1px 1px #444;
+}
+body.login div#login p#backtoblog {}
+body.login div#login p#backtoblog a {
+	color:  #fff;
+	text-shadow: 1px 1px 1px #444;
+}
+.login #login_error {
+	margin-top: 18px;
+	border-left-color: #ff6f6f;
+}
+div[data-layout="menu_table_start_set"] .acf-fc-layout-handle,
+div[data-layout="menu_table_end_set"] .acf-fc-layout-handle {
+	background-color: #bead97;
+	color: #fff !important;
+}
+div[data-layout="surround_start_set"] .acf-fc-layout-handle,
+div[data-layout="surround_end_set"] .acf-fc-layout-handle {
+	background-color: #957c5c;
+	color: #fff !important;
+}
+
+div[data-name="acf_container_col"] .acf-row:nth-child(odd) .acf-row-handle {
+	background-color: #957c5c !important;
+	color: #fff !important;
+}
+div[data-name="acf_container_col"] .acf-row:nth-child(even) .acf-row-handle {
+	background-color: #3b4656 !important;
+	color: #fff !important;
+}
+

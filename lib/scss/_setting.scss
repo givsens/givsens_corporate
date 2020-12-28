@@ -1,0 +1,118 @@
+@charset "utf-8";
+// ===================================================================
+// 設定
+// ===================================================================
+@import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+1p:400,700,800&display=swap');
+// ベースフォント
+$note_sans_font: "Noto Sans Japanese", "-apple-system", BlinkMacSystemFont, "Helvetica Neue", Roboto, "Droid Sans", Arial, "Yu Gothic", YuGothic, Meiryo, sans-serif;
+
+$yugo_font: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+
+//$base_font: 'メイリオ' ,Meiryo, 'ヒラギノ角ゴ Pro W3' , 'Hiragino Kaku Gothic Pro' , 'ＭＳ Ｐゴシック' , 'Osaka' ,sans-serif;
+// $base_font: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Original Yu Gothic", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif;
+$sub_font: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+
+
+$base_font: $yugo_font;
+
+
+$nav_font: 'Ubuntu', sans-serif;
+$eng_font: 'Ubuntu', sans-serif;
+
+
+$Mplus_font: 'M PLUS 1p', sans-serif; //日本語
+
+.mplus_font {
+  font-family: $Mplus_font;
+  font-weight: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $note_sans_font;
+}
+
+// h1, h2, h3, h4, h5, h6 {
+//   @extend .mplus_font;
+// }
+
+//-----------------------サイズ---------------------------
+
+// ページ全体の横幅
+$base_width: 1000px;
+$main_width: 740px;
+$side_width: 240px;
+// スマホ表示幅
+$sp_width: 768px;
+$tb_width: 1024px;
+
+//レスポンシブ時の左右のスペース
+$content_space: 15px;
+
+
+//-----------------------カラー---------------------------
+
+$base_color: #fff;		// ベースカラー
+$main_color: #54c2f0;	// メインカラー
+$sub_color: #808080;	//サブカラー
+$txt_color: #1b1b1b;	//テキストカラー
+$color_text_reversal: #fff;
+$color_text_inverse: $color_text_reversal;
+
+$btn_txt_color: #fff;  //テキストカラー
+$btn_color: $main_color;  //テキストカラー
+
+$body_color: $base_color;
+$nav_color: $main_color;   //グローバルナビゲーション　*グラデーション時は直接記述
+$nav_color_link: $txt_color; // Gナビリンクカラー
+$footer_color: $main_color;
+
+//--------------------------------------------------
+
+$main_visual_width: 100%;
+
+// 診療時間
+$color_schedule_thead_bg: darken( $main_color, 20% ); // thead > th の背景色
+$color_schedule_thead_text: #fff; // thead > th の文字色
+$color_schedule_tbody_th_bg: lighten($color_schedule_thead_bg, 20%); // tbody > th の背景色
+$color_schedule_td_bg: #fff; // td の背景色
+$color_schedule_border: #efefef; // ボーダー色
+
+//-----------------------リンク---------------------------
+
+// ベースリンクカラー
+$link_color: $main_color;
+$link_color_visited: $txt_color;
+$link_color_hover: #005bab;
+$link_color_active: $txt_color;
+
+
+
+
+
+
+
+/* リンク
+----------------------------------------------------*/
+
+// a {
+//   color: $link_color;
+//   -webkit-transition: color 0.24s ease;
+//   -moz-transition: color 0.24s ease;
+//   -o-transition: all 0.24s ease;
+//   transition: color 0.24s ease;
+// }
+// a:hover, a:active, a:focus {
+//   color: $txt_color;
+//   -webkit-transition: color 0.24s ease;
+//   -moz-transition: color 0.24s ease;
+//   -o-transition: all 0.24s ease;
+//   transition: color 0.24s ease;
+// }
+
+a {color: $main_color;}
+// a:link {}
+// a:visited {}
+a:hover {text-decoration: none;}
+// a:active {}

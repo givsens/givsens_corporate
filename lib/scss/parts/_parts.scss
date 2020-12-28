@@ -1,0 +1,25 @@
+
+/* SNS
+----------------------------------------------------*/
+.share_button {
+  max-width: $base_width;
+  padding: 80px 0;
+  margin: auto;
+  @media screen and (max-width: $sp_width) {
+    width: 100%;
+    padding: 40px 15px;
+  }
+  ul {
+    li {
+      display: inline-block;
+    }
+  }
+}
+.fb_iframe_widget > span {
+  vertical-align: baseline !important;
+}
+
+@media screen and (max-width: $sp_width) {
+
+
+}

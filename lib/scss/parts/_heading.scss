@@ -1,0 +1,175 @@
+@charset "utf-8";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	// font-weight: normal;
+}
+
+.page_ttl {
+	padding: 2.5em 15px;
+	background-color: $main_color;
+	font-weight: bold;
+	font-size: 3.6rem;
+	text-align: center;
+	color: #fff;
+
+	@media only screen and (max-width: $sp_width) {
+		padding: 2em 15px;
+		font-size: 2.8rem;
+		line-height: 1.1;
+	}
+}
+
+.custom_content {
+	margin-bottom: 100px;
+
+	h2.style_ttl {
+		position: relative;
+		margin-bottom: .75em;
+		margin-left: -1em;
+		line-height: 1.4;
+		font-size: 4.0rem;
+		color: #1b1b1b;
+		font-weight: 900;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		span {
+			display: block;
+			padding-top: 0.8em;
+			color: $main_color;
+			font-size: 1.8rem;
+		}
+
+		@media only screen and (max-width: $sp_width) {
+			font-size: 2.4rem;
+			margin: 1.5em 0 1em 0;
+
+			span {
+				display: block;
+				padding-top: 0.8em;
+				color: $main_color;
+				font-size: 1.4rem;
+			}
+		}
+	}
+
+	h3.style_ttl {
+		position: relative;
+		margin-bottom: 1em;
+		color: $main_color;
+		font-size: 2.4rem;
+		line-height: 1.4;
+
+		@media only screen and (max-width: $sp_width) {
+			font-size: 1.8rem;
+			margin: 3% 0 3%;
+		}
+	}
+
+	h4.style_ttl {
+		margin-bottom: 2%;
+		margin-top: 3%;
+		padding-left: 10px;
+		padding-bottom: .2em;
+		font-size: 1.8rem;
+		line-height: 1.4;
+		border-left: 4px solid $main_color;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	@media only screen and (max-width: $sp_width) {
+		h2.style_ttl {}
+
+		h2.archive_ttl {
+			font-size: 2.0rem;
+		}
+
+		h4.style_ttl {
+			font-size: 1.5rem;
+		}
+	}
+}
+
+.custom_content {
+
+	h1:not(.style_ttl),
+	h2:not(.style_ttl),
+	h3:not(.style_ttl),
+	h4:not(.style_ttl),
+	h5:not(.style_ttl),
+	h6:not(.style_ttl) {
+		margin-bottom: 20px;
+	}
+
+	h1:not(.style_ttl) {
+		font-size: 3.6rem;
+		font-weight: bold;
+	}
+
+	h2:not(.style_ttl) {
+		font-size: 3.2rem;
+		font-weight: bold;
+	}
+
+	h3:not(.style_ttl) {
+		font-size: 2.0rem;
+		font-weight: bold;
+	}
+
+	h4:not(.style_ttl) {
+		font-size: 1.8rem;
+		font-weight: bold;
+	}
+
+	h5:not(.style_ttl) {
+		font-size: 1.6rem;
+		font-weight: bold;
+	}
+
+	h6:not(.style_ttl) {
+		font-size: 1.4rem;
+		font-weight: bold;
+	}
+
+	@media only screen and (max-width: $sp_width) {
+		h1:not(.style_ttl) {
+			font-size: 2.8rem;
+			font-weight: bold;
+		}
+
+		h2:not(.style_ttl) {
+			font-size: 2.4rem;
+			font-weight: bold;
+		}
+
+		h3:not(.style_ttl) {
+			font-size: 2.0rem;
+			font-weight: bold;
+		}
+
+		h4:not(.style_ttl) {
+			font-size: 1.8rem;
+			font-weight: bold;
+		}
+
+		h5:not(.style_ttl) {
+			font-size: 1.6rem;
+			font-weight: bold;
+		}
+
+		h6:not(.style_ttl) {
+			font-size: 1.4rem;
+			font-weight: bold;
+		}
+	}
+}

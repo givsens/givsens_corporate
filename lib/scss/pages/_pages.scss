@@ -1,0 +1,176 @@
+// ===================================================================
+// 固定ページ
+// ===================================================================
+
+/* page（個別ページ）
+----------------------------------------------------*/
+
+// h2.page_ttl {
+// 	background: #5eb3ea;
+// 	padding: 55px;
+// 	line-height: 1;
+// 	color: #fff;
+// 	@include fz(32);
+// 	text-align: center;
+// 	margin-bottom: 50px;
+// 	font-weight: normal;
+// 	letter-spacing: .1em;
+// }
+
+/*  パスワード保護ページ
+----------------------------------------------------*/
+.post-password-form {
+	padding: 100px 0 400px;
+}
+/*  404ページ
+----------------------------------------------------*/
+.box404 {
+	padding: 100px 0 400px;
+	word-wrap: break-word;
+	@media only screen and (max-width: $sp_width) {
+		padding: 100px 15px 400px;
+	}
+}
+/*  よくある質問
+----------------------------------------------------*/
+// .post-type-archive-faq {
+// 	.customContent ol {
+// 		li {
+// 			@include fz(16);
+// 			margin-bottom: 20px;
+// 			padding-bottom: 5px;
+// 			border-bottom: 1px dotted $main_color;
+// 			a {
+// 				text-decoration: none;
+// 				&:hover {
+// 					color: $sub_color;
+// 					text-decoration: underline;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
+
+/*  施設のご案内
+----------------------------------------------------*/
+// .customContent {
+// 	.gallery_box {
+// 		@include fz(14);
+// 		letter-spacing: -.4em;
+// 		text-align: left;
+// 		li {
+// 			vertical-align: top;
+// 			letter-spacing: normal;
+// 			p {
+
+// 			}
+// 		}
+// 		&.set-2.staff_box {
+// 			li {
+// 				width: 46%;
+// 				margin-right: 8%;
+// 				&:last-child {
+// 					margin-right: 0;
+// 				}
+// 				.name {
+// 					@include fz(16);
+// 					margin-bottom: 10px;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
+
+// .customContentMenu {
+// 	.styleTtl {
+// 		span {
+// 			@include fz(12);
+// 			font-weight: normal;
+// 			vertical-align: central;
+// 			margin-left: 10px;
+// 		}
+// 	}
+// 	table {
+// 		width: 100%;
+// 		margin-bottom: 80px;
+// 		tr{
+// 			border-bottom: 1px solid $main_color;
+// 			th {
+// 				text-align: left;
+// 				padding-top: 20px;
+// 			}
+// 			td {
+// 				text-align: right;
+// 				padding-top: 20px;
+// 				font-weight: bold;
+// 			}
+// 		}
+// 	}
+// 	.zei {@include fz(11); margin-left: 2px;}
+// }
+
+/* スマホ用
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: $sp_width) {
+
+/* page（個別ページ）
+----------------------------------------------------*/
+
+// h2.page_ttl {
+// 	padding: 20px;
+// 	@include fz(22);
+// 	margin-bottom: 3%;
+// }
+
+
+/*  施設のご案内
+----------------------------------------------------*/
+// .customContent {
+// 	.gallery_box {
+// 		@include fz(12);
+// 		&.set-2.staff_box {
+// 			li {
+// 				width: 100%;
+// 				display: block;
+// 				margin-bottom: 40px;
+// 			}
+// 		}
+// 	}
+// }
+
+
+// .customContentMenu {
+// 	.styleTtl {
+// 		span {
+// 			@include fz(12);
+// 			font-weight: normal;
+// 			vertical-align: central;
+// 			margin-left: 10px;
+// 		}
+// 	}
+// 	table {
+// 		width: 100%;
+// 		margin-bottom: 80px;
+// 		tr{
+// 			border-bottom: 1px solid $main_color;
+// 			th {
+// 				text-align: left;
+// 				padding-top: 20px;
+// 			}
+// 			td {
+// 				text-align: right;
+// 				padding-top: 20px;
+// 				font-weight: bold;
+// 			}
+// 		}
+// 	}
+// 	.zei {@include fz(11); margin-left: 2px;}
+// }
+
+
+
+}
+

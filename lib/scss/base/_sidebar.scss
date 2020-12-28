@@ -1,0 +1,149 @@
+/*-----------------------------------------------
+ #sidebar
+----------------------------------------------- */
+
+#side_column {
+	float: left;
+	width: $side_width;
+	margin-bottom: 80px;
+	.side_ttl {
+		padding: 10px 15px;
+		background: $main_color;
+		color: #fff;
+		@include fz(16);
+	}
+	.side_news {
+		padding: 10px;
+		border: 2px solid #ccc;
+		border-top: none;
+		@include fz(13);
+		ul {
+			li {
+				a {
+					display: block;
+					padding-top: 10px;
+					padding-bottom: 10px;
+					border-bottom: 1px dashed #ccc;
+					&:hover {
+						background-color: lighten( $main_color, 15% );
+					}
+				}
+				&:last-child {
+					
+				}
+			}
+		}
+	}
+	.side_shop_box {
+		.side_shop_img {
+			margin-bottom: 10px;
+		}
+		.side_shop_ttl {
+			&::before {
+				content: '▶';
+				transform: scale(0.7, 0.8);
+				margin-right: 2px;
+				display: inline-block;
+			}
+		}
+		.side_shop_txt {
+			margin-bottom: 20px;
+			@include fz(12);
+		}
+	}
+	.news_box {
+		padding: 4px;
+		border: 1px solid #cdcdcd;
+		.ttl_side {
+			padding: 5px;
+			margin-bottom: 10px;
+			border-bottom: 1px solid #cdcdcd;
+			a {
+				display: inline-block;
+				float: right;
+				padding: 2px 10px;
+				background-color: $main_color;
+				border-radius: 3px;
+				color: #fff;
+				@include fz(12);
+				text-decoration: none;
+			}
+		}
+		.news_list {
+			overflow: hidden;
+			dt {
+				float:left;
+				clear:left;
+				width: 70px;
+				padding-top: 5px;
+				padding-left: 5px;
+				padding-right: 5px;
+				@include fz(12);
+				border-top: 1px solid #cdcdcd;
+				&:nth-of-type(1) {
+					border-top: none;
+				}
+			}
+			dd {
+				width: 150px;
+				margin: 0 0 5px 70px;
+				padding-top: 5px;
+				padding-left: 10px;
+				border-top: 1px solid #cdcdcd;
+				@include fz(12);
+				&:nth-of-type(1) {
+					border-top: none;
+				}
+				a {
+					color: $txt_color;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+/* スマホ用
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+@media only screen and (max-width: $sp_width) {
+
+
+#side_column {
+	float: none;
+	width: 96%;
+	margin: 0 auto 40px;
+	.side_shop_box {
+		.side_shop_img {
+			text-align: center;
+		}
+		.side_shop_ttl {
+		}
+		.side_shop_txt {
+			//margin-bottom: 20px;
+		}
+	}
+	.news_box {
+		.ttl_side {
+			a {}
+		}
+		.news_list {
+			dt {
+				width: 25%;
+				@include fz(12);
+				border-top: 1px solid #cdcdcd;
+				&:nth-of-type(1) {}
+			}
+			dd {
+				width: 80%;
+				margin: 0 0 5px 80px;
+				padding-left: 10px;
+				&:nth-of-type(1) {}
+				a {}
+			}
+		}
+	}
+}
+
+}

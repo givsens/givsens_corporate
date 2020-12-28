@@ -1,0 +1,402 @@
+@charset "utf-8";
+
+/* 
+  ・文字スタイルは案件ごとに都度指定すること。
+  ・mixinは基本的に触らない。
+*/
+
+// btn-line-trans Mixin
+@mixin btn-line-trans(
+  $beforeTextColor: $main_color, // :hover前のテキスト色/横棒色
+  $beforeBorderColor: $main_color, // :hover前の枠色/:hover時背景色
+  $afterTextColor: #fff, // :hover時のテキスト色
+  $afterLineColor: #fff // :hover時の横棒色
+) {
+
+  a {
+    position: relative;
+    width: 100%;
+    max-width: 250px;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+		text-align: center;
+		text-decoration: none;
+    color: $beforeTextColor;
+    border: 1px solid $beforeBorderColor;
+    overflow: hidden;
+    z-index: 1;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 0;
+      left: 0;
+      top: 50%;
+      z-index: 0;
+      background: $beforeBorderColor;
+      transition: all 0.2s cubic-bezier(0.20, 1, .20, 1);
+    }
+
+    &::after {
+      top: auto;
+      bottom: 50%;
+    }
+
+    span {
+      position: relative;
+      display: block;
+      width: 100%;
+      color: $beforeTextColor;
+      transition: all 0.3s cubic-bezier(0.20, 1, .20, 1);
+      z-index: 1;
+
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 10%;
+        height: 1px;
+        transition: all 0.3s cubic-bezier(0.20, 1, .20, 1);
+        transition-delay: 0.2s;
+      }
+
+      &::before {
+        width: 100%;
+        opacity: 0;
+        background: #FFF;
+        transform: translateX(-200%);
+      }
+
+      &::after {
+        width: 5%;
+        background: $beforeTextColor;
+      }
+    }
+
+    &:hover {
+
+      &::before,
+      &::after {
+        height: 51%;
+        transition-delay: 0.2s;
+      }
+
+      span {
+        color: $afterTextColor;
+        transition-delay: 0.2s;
+
+        &::before {
+          opacity: 1;
+          background: $afterLineColor;
+          width: 5%;
+          transform: translateX(0);
+          transition-delay: 0.2s;
+        }
+
+        &::after {
+          background: $afterLineColor;
+          transform: translateX(350%);
+        }
+      }
+    }
+  }
+}
+
+// Set mixin
+.parts_btn_type_a {
+  @include btn-line-trans();
+}
+
+.more_btn {
+	@include btn-line-trans(
+		$beforeTextColor: #fff, // :hover前のテキスト色/横棒色
+		$beforeBorderColor: #1d2088, // :hover前の枠色/:hover時背景色
+		$afterTextColor: #1d2088, // :hover時のテキスト色
+		$afterLineColor:#1d2088 // :hover時の横棒色
+	);
+
+	a {
+		max-width: 385px;
+		padding: 1.25em 0;
+		background: #1d2088;
+		border-radius: 35px;
+		font-weight: bold;
+		font-size: 2.2rem;
+		font-family: $yugo_font;
+		letter-spacing: .1em;
+		
+		@media only screen and (max-width: $sp_width) {
+			max-width: 280px;
+			font-size: 1.4rem;
+		}
+
+		&:hover {
+
+			&::before,
+			&::after {
+				background: #fff;
+			}
+
+			span {
+				background: #fff;
+			}
+		}
+	}
+}
+
+.contact_btn {
+	@include btn-line-trans(
+		$beforeTextColor: #1b1b1b, // :hover前のテキスト色/横棒色
+		$beforeBorderColor: #fff100, // :hover前の枠色/:hover時背景色
+		$afterTextColor: #1b1b1b, // :hover時のテキスト色
+		$afterLineColor:#1b1b1b // :hover時の横棒色
+	);
+
+	a {
+		max-width: 385px;
+		padding: 1.25em 0;
+		background: #fff100;
+		border-radius: 35px;
+		font-weight: bold;
+		font-size: 2.2rem;
+		font-family: $yugo_font;
+		letter-spacing: .1em;
+		
+		@media only screen and (max-width: $sp_width) {
+			max-width: 280px;
+			font-size: 1.4rem;
+		}
+
+		&:hover {
+
+			&::before,
+			&::after {
+				background: #fff;
+			}
+
+			span {
+				background: #fff;
+			}
+		}
+	}
+}
+
+/* btn
+----------------------------------------------------*/
+.custom_content {
+
+	.parts_btn_type_a,
+	.parts_btn_type_b,
+	.parts_btn_type_c {
+		margin-bottom: 50px;
+	}
+}
+
+.parts_btn_type_a {
+	margin: 20px 0;
+
+	a {
+		max-width: 350px;
+		font-weight: bold;
+	}
+
+
+	&.btn_sm {
+		a {
+			@include fz(14);
+		}
+	}
+
+	&.btn_lg {
+		a {
+			@include fz(18);
+			max-width: 500px !important;
+		}
+	}
+}
+
+.parts_btn_type_b {
+	margin: 20px 0;
+
+	a {
+		display: inline-block;
+		padding: 1em 1.8em;
+		background-color: $btn_txt_color;
+		border: 2px solid $btn_color;
+		border-radius: 5px;
+		color: $btn_color;
+		@include fz(16);
+		line-height: 1.42;
+		text-decoration: none;
+		-webkit-transition: background-color 0.35s, color 0.35s;
+		transition: background-color 0.35s, color 0.35s;
+		letter-spacing: 2px;
+
+		&:hover {
+			border-radius: 5px;
+			background-color: $btn_color;
+			color: $btn_txt_color;
+			-webkit-transition: background-color 0.35s, color 0.35s;
+			transition: background-color 0.35s, color 0.35s;
+		}
+	}
+
+	&.btn_sm {
+		a {
+			@include fz(14);
+		}
+	}
+
+	&.btn_lg {
+		a {
+			@include fz(18);
+		}
+	}
+}
+
+.parts_btn_type_c {
+	margin: 20px 0;
+
+	a {
+		display: inline-block;
+		padding: 1em 1.8em;
+		background-color: $btn_color;
+		border-radius: 2em;
+		color: $btn_txt_color;
+		@include fz(16);
+		line-height: 1.42;
+		text-decoration: none;
+		box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+		-webkit-transition: background-color 0.35s, color 0.35s;
+		transition: background-color 0.35s, color 0.35s;
+		letter-spacing: 2px;
+
+		&:hover {
+			background: lighten($btn_color, 15%);
+			-webkit-transition: background-color 0.35s, color 0.35s;
+			transition: background-color 0.35s, color 0.35s;
+		}
+	}
+
+	&.btn_sm {
+		a {
+			@include fz(14);
+		}
+	}
+
+	&.btn_lg {
+		a {
+			@include fz(18);
+		}
+	}
+}
+
+.btnBox {
+	text-align: center;
+	margin: 20px 0;
+}
+
+.btn01 {
+	a {
+		min-width: 300px;
+		padding: 10px 30px;
+		display: inline-block;
+		background-color: $main_color;
+		text-decoration: none;
+		-webkit-appearance: none;
+		border-radius: 5px;
+		@include fz(16);
+		color: #FFF;
+		box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+		-webkit-transition: background-color 0.35s, color 0.35s;
+		transition: background-color 0.35s, color 0.35s;
+		//border: 1px solid $main_color;
+		//cursor:pointer;
+		letter-spacing: 2px;
+
+		&:hover {
+			border-radius: 5px;
+			background: lighten($main_color, 15%);
+			//color: $txt_color;
+			-webkit-transition: background-color 0.35s, color 0.35s;
+			transition: background-color 0.35s, color 0.35s;
+			//border: 1px solid $main_color;
+		}
+	}
+}
+
+.btn02 {
+	a {
+		@include fz(16);
+		padding: 10px 70px;
+		display: inline-block;
+		background-color: #193662;
+		text-decoration: none;
+		-webkit-appearance: none;
+		border-radius: 5px;
+		color: #fff;
+		box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+		-webkit-transition: background-color 0.35s, color 0.35s;
+		transition: background-color 0.35s, color 0.35s;
+		//border: 1px solid $main_color;
+		//cursor:pointer;
+		letter-spacing: 2px;
+
+		&:hover {
+			border-radius: 5px;
+			background: $main_color;
+			color: #fff;
+			box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+			-webkit-transition: background-color 0.35s, color 0.35s;
+			transition: background-color 0.35s, color 0.35s;
+			//border: 1px solid $main_color;
+		}
+	}
+}
+
+.btn_more {
+	a {
+		padding: 7px 16px;
+		display: inline-block;
+		background-color: $main_color;
+		text-decoration: none;
+		-webkit-appearance: none;
+		border-radius: 3px;
+		color: #FFF;
+		@include fz(14);
+		line-height: 1;
+		box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+		-webkit-transition: background-color 0.35s, color 0.35s;
+		transition: background-color 0.35s, color 0.35s;
+		letter-spacing: 2px;
+
+		&:hover {
+			background: lighten($main_color, 15%);
+			-webkit-transition: background-color 0.35s, color 0.35s;
+			transition: background-color 0.35s, color 0.35s;
+		}
+	}
+}
+
+@media screen and (max-width: $sp_width) {
+	.btn01 {
+		a {
+			width: 90%;
+			min-width: auto;
+			padding: 10px 40px;
+		}
+	}
+
+	.btn02 {
+		a {
+			padding: 10px 30px;
+		}
+	}
+}
